@@ -1,20 +1,15 @@
 import React from 'react';
 import './Business.css';
-// This is the card component
-const business = {
-    imageSrc: 'https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg',
-    name: 'MarginOtto Pizzeria',
-    address: '1010 Paddington Way',
-    city: 'Flavortown',
-    state: 'NY',
-    zipCode: '10101',
-    category: 'Italian',
-    rating: 4.5,
-    reviewCount: 90
-};
+
 
 class Business extends React.Component {
   render() {
+    /*since we removed the business object we then have to access the business
+    info. differently because for ex. the business.imageSrc does not exist. We
+    have to access that info via the business prop (this.props) we set in
+    businessList file. An easier way to do this is just set a variable and its
+    value = this.props.*/
+    const { business } = this.props;
     return (
       <div className="Business">
         <div className="image-container">
