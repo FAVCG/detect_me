@@ -27,11 +27,15 @@ const businesses = [
 ];
 
 class App extends React.Component {
+
+  searchYelp(term, location, sortBy) {
+    console.log(`Searching for ${term}, ${location}, and ${sortBy}`);
+  }
   render() {
     return (
       <div className="App">
         <h1>DetectMe</h1>
-        <SearchBar />
+        <SearchBar searchYelp={this.searchYelp}/>
       {/*Here we added a property inside a component and as a value we
       added the array*/}
         <BusinessList businesses={businesses} />
